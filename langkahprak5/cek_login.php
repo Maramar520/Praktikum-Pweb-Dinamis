@@ -15,9 +15,13 @@ echo "id user =",$_SESSION['iduser'],"<br>";
 echo "password=",$_SESSION['passuser'],"<br>";
 echo "<a href=logout.php><b>LOGOUT</b></a></center>";
 }
-else{
+elseif ($ketemu = 0){
 echo "<center>Login gagal! username & password tidak benar<br>";
 echo "<a href=form_login.php><b>ULANGILAGI</b></a></center>";
 }
+
+else {
+echo "<center>Login gagal! Captcha tidak sesuai<br>";
+echo "<a href=form_login.php><b>ULANGI LAGI</b></a></center>"; }   
 mysqli_close($con);
 ?>
